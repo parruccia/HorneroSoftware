@@ -12,3 +12,12 @@ if ('IntersectionObserver' in window) {
 } else {
     bricks.forEach(b => b.classList.add('visible'));
 }
+
+const nav = document.querySelector('.hero-nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 40) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});

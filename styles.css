@@ -59,19 +59,36 @@ h3 {
 }
 
 /* ---------- hero ---------- */
-.hero-cs {
-  background: var(--clay);
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  overflow: hidden;
+html{
+  overflow-x:hidden;
+}
+.hero-cs{
+  background:var(--clay);
+  position:relative;
+  left:50%;
+  right:50%;
+  width:100vw;
+  margin-left:-50vw;
+  margin-right:-50vw;
+  overflow:hidden;
 }
 
-.hero-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 28px;
+.hero-nav{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  z-index:50;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 32px; /* antes 22px 28px */
+  background:var(--clay);
+  transition:background-color .25s ease;
+}
+
+.hero-nav.scrolled{
+  background:rgba(193,122,62,0.75);
+  backdrop-filter:blur(6px);
 }
 
 .hero-nav .brand {
@@ -107,8 +124,8 @@ h3 {
   opacity: 1;
 }
 
-.hero-body {
-  padding: 56px 28px 80px;
+.hero-body{
+  padding:80px 28px 80px; 
 }
 
 .hero-body h1 {
@@ -184,6 +201,7 @@ h3 {
 @media (max-width:640px) {
   .hero-body {
     padding: 40px 24px 32px;
+     padding-top:140px;
   }
 
   .hero-tags {
@@ -931,7 +949,8 @@ footer {
   /* nav */
   .hero-nav{
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
+    text-align:center;
     gap:14px;
     padding:18px 20px;
   }
@@ -939,6 +958,7 @@ footer {
     gap:18px;
     font-size:0.85rem;
     flex-wrap:wrap;
+    justify-content:center;
   }
 
   /* hero body */
@@ -992,15 +1012,19 @@ footer {
 
   /* mockup Kapé */
   .device-mockup{
-    flex-direction:column;
-    align-items:center;
-    gap:24px;
+    display:block;
+    position:relative;
+    max-width:280px;
+    margin:0 auto;
   }
   .laptop{
     width:100%;
   }
   .phone{
-    width:100px;
+    position:absolute;
+    right:-8px;
+    bottom:-16px;
+    width:64px;
   }
 
   /* wall (features) */
@@ -1030,5 +1054,37 @@ footer {
   .quien-soy{
     padding-top:36px;
     padding-bottom:36px;
+  }
+}
+
+.whatsapp-float{
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  width:56px;
+  height:56px;
+  background:var(--cream);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.35);
+  z-index:60;
+  transition:transform .18s ease;
+}
+.whatsapp-float img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+}
+.whatsapp-float:hover{
+  transform:scale(1.08);
+}
+@media (max-width:640px){
+  .whatsapp-float{
+    bottom:16px;
+    right:16px;
+    width:50px;
+    height:50px;
   }
 }
