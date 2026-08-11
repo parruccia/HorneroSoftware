@@ -9,17 +9,17 @@
   const plans = {
     inicial: {
       label: 'Plan Inicial',
-      price: '$80.000 – $130.000',
+      price: '$150.000 – $199.000',
       desc: 'Presencia online para que te encuentren y te contacten, sin necesidad de un panel propio.'
     },
     crecimiento: {
       label: 'Plan Crecimiento',
-      price: '$150.000 – $230.000',
+      price: '$220.000 – $299.000',
       desc: 'Sistema de pedidos o catálogo con panel propio para que manejes vos mismo tu contenido.'
     },
     medida: {
       label: 'Plan A Medida',
-      price: '$250.000 – $420.000',
+      price: 'Desde $400.000',
       desc: 'Sistema con lógica propia: pagos online, stock, variantes o lo que tu negocio necesite.'
     }
   };
@@ -53,6 +53,11 @@
       const question = opt.closest('.calc-question');
       const qNum = Number(question.dataset.q);
       answers['q' + qNum] = opt.dataset.value;
+
+      if ((qNum === 1 && answers.q1 === '3') || (qNum === 2 && answers.q2 === 'si')) {
+        calcResult();
+        return;
+      }
 
       const next = qNum + 1;
       if (next <= 3) {

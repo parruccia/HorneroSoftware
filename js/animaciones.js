@@ -13,6 +13,13 @@ if ('IntersectionObserver' in window) {
     bricks.forEach(b => b.classList.add('visible'));
 }
 
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
+
 const nav = document.querySelector('.hero-nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 40) {
