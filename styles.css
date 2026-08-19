@@ -175,44 +175,10 @@ html{
   font-size: 0.95rem;
 }
 
-.hero-tags {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  border-top: 1px solid rgba(27, 22, 15, 0.2);
-  margin-top: 24px;
-  padding: 24px 28px;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: rgba(27, 22, 15, 0.7);
-}
-
-.hero-tags li {
-  padding: 0 20px;
-  border-left: 1px solid rgba(27, 22, 15, 0.2);
-}
-
-.hero-tags li:first-child {
-  padding-left: 0;
-  border-left: none;
-}
-
 @media (max-width:640px) {
   .hero-body {
     padding: 40px 24px 32px;
      padding-top:83px;
-  }
-
-  .hero-tags {
-    flex-direction: column;
-    gap: 8px;
-    padding: 16px 24px;
-  }
-
-  .hero-tags li {
-    border-left: none;
-    padding: 0;
   }
 }
 
@@ -343,50 +309,6 @@ html{
 }
 
 /* ---------- secciones apiladas ---------- */
-.section-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
-  padding: 56px 0;
-}
-
-.section-stack>section {
-  max-width: 720px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* ---------- metricas ---------- */
-.metric-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.metric-list li {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid rgba(242, 234, 216, 0.08);
-  padding-top: 14px;
-}
-
-.metric-list li:first-child {
-  border-top: none;
-  padding-top: 0;
-}
-
-.metric-num {
-  font-family: 'Fraunces', serif;
-  font-size: 1.8rem;
-  color: var(--clay-light);
-}
-
-.metric-label {
-  font-size: 0.85rem;
-  color: var(--cream-dim);
-}
-
 /* ---------- cómo trabajo (pasos) ---------- */
 .steps-list {
   display: flex;
@@ -415,7 +337,7 @@ html{
   width: 32px;
 }
 
-.step-body h4 {
+.step-body h3 {
   font-family: 'Fraunces', serif;
   font-size: 1.05rem;
   color: var(--cream);
@@ -440,17 +362,6 @@ html{
 .project-top h3 {
   font-size: 1.2rem;
   color: var(--cream);
-}
-
-.project-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.74rem;
-  color: var(--olive);
-  background: rgba(124, 138, 92, 0.12);
-  border: 1px solid rgba(124, 138, 92, 0.3);
-  padding: 4px 10px;
-  border-radius: 20px;
-  white-space: nowrap;
 }
 
 .bento-box p.desc {
@@ -488,8 +399,9 @@ html{
   font-weight: 500;
   color: var(--soil);
   opacity: 0;
+  visibility: hidden;
   transform: translateY(10px);
-  transition: opacity .5s ease, transform .5s ease;
+  transition: opacity .5s ease, transform .5s ease, visibility 0s .5s;
 }
 
 .brick.olive {
@@ -499,6 +411,7 @@ html{
 
 .brick.visible {
   opacity: 1;
+  visibility: visible;
   transform: translateY(0);
 }
 
@@ -739,7 +652,7 @@ html{
   letter-spacing: 0.04em;
 }
 
-.price-card h4 {
+.price-card h3 {
   font-family: 'Fraunces', serif;
   font-size: 1rem;
   color: var(--cream);
@@ -965,22 +878,6 @@ html{
 .contact p {
   color: var(--cream-dim);
   margin-bottom: 28px;
-}
-
-.email-link {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: clamp(1rem, 3vw, 1.3rem);
-  color: var(--clay-light);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(224, 168, 104, 0.4);
-  padding-bottom: 4px;
-  transition: border-color .2s, color .2s;
-}
-
-.email-link:hover,
-.email-link:focus-visible {
-  color: var(--cream);
-  border-color: var(--cream);
 }
 
 footer {
@@ -1281,6 +1178,7 @@ footer {
 
   .brick {
     opacity: 1;
+    visibility: visible;
     transform: none;
   }
 }
